@@ -40,3 +40,11 @@ export let getInfoMovieByTheater = (maPhim) => {
     headers: configHeaders(),
   });
 };
+
+export let getChair = (maLichChieu) => {
+  return axios({
+    url: `${BASE_URL}/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`,
+    method: "GET",
+    headers: configHeaders(),
+  });
+};

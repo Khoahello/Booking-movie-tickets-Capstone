@@ -40,7 +40,6 @@ export default function Slider() {
             dotHeight: 5,
             dotWidth: 30,
             dotActiveWidth: 70,
-            /* here is your component tokens */
           },
         },
       }}
@@ -60,8 +59,3 @@ export default function Slider() {
     </ConfigProvider>
   );
 }
-
-let user = {
-  ["your name"]: "alice Trần",
-};
-console.log("🤣 ~ file: Slider.js:52 ~ user:", user["your name"]);
