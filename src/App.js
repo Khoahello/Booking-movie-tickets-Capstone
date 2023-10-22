@@ -1,12 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import "./pages/TicketRoom/ListChair.css";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import DetailMovie from "./pages/DetailMovie/DetailMovie";
 import Layout from "./template/Layout";
 import Signup from "./pages/Signup/Signup";
 import TicketRoom from "./pages/TicketRoom/TicketRoom";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -35,6 +35,14 @@ function App() {
           element={
             <Layout>
               <TicketRoom />
+            </Layout>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Layout>
+              <Profile />
             </Layout>
           }
         />

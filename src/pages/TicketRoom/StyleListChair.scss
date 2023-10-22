@@ -1,0 +1,55 @@
+#TicketRoom {
+  .ghe {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    font-size: large;
+    transition: 0.4s;
+  }
+
+  .gheThuong {
+    cursor: pointer;
+    border: 2px solid orange;
+    background: #e9e9e9;
+  }
+
+  .gheVip {
+    cursor: pointer;
+    border: 2px solid orange;
+    background: orange;
+  }
+
+  .gheThuong:hover,
+  .gheVip:hover {
+    border: 2px solid #f1f1f1;
+    background: #f1f1f1;
+  }
+
+  .gheThuong:active,
+  .gheVip:active {
+    border: 2px solid #008000;
+    background: #008000;
+  }
+
+  .gheDuocChon {
+    border: 2px solid #767676;
+    font-weight: 600;
+    background: #767676;
+    color: #575757;
+    cursor: no-drop !important;
+  }
+
+  .gheDangChon {
+    background: rgb(109, 238, 109);
+    border: 2px solid rgb(109, 238, 109);
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+  }
+}

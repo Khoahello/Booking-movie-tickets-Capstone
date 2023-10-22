@@ -2,6 +2,19 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { userLocalStorage } from "../../api/localService";
 import { NavLink } from "react-router-dom";
+import { Dropdown, Space } from "antd";
+import { DownOutlined } from "@ant-design/icons";
+
+const items = [
+  {
+    label: <NavLink to={"/profile"}>Profile</NavLink>,
+    key: "0",
+  },
+  {
+    label: <a href="https://www.aliyun.com">2nd menu item</a>,
+    key: "1",
+  },
+];
 
 export default function Header() {
   // anfn
@@ -27,7 +40,21 @@ export default function Header() {
       // đã đăng nhập
       return (
         <>
-          <span>{info.hoTen}</span>
+          <sapn>
+            <Dropdown
+              menu={{
+                items,
+              }}
+              trigger={["click"]}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space className=" hover:cursor-pointer">
+                  {info.hoTen}
+                  <DownOutlined />
+                </Space>
+              </a>
+            </Dropdown>
+          </sapn>
           <button className={classBtn} onClick={handleLogOut}>
             Đăng xuất
           </button>
@@ -46,6 +73,11 @@ export default function Header() {
       );
     }
   };
+
+  const handleChange = (value) => {
+    console.log(`selected ${value}`);
+  };
+
   return (
     <div className="h-20 flex items-center justify-between shadow-lg px-20 text-red-600">
       <NavLink className="animate-pulse text-2xl font-semibold" to="/home">

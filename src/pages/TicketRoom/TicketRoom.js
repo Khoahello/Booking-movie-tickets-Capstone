@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
+import "./StyleListChair.scss";
 import { useParams } from "react-router-dom";
 import { getChair } from "../../api/api";
 import moment from "moment";
-import axios from "axios";
-import {
-  BASE_URL,
-  configHeaders,
-  configHeadersAuthorization,
-} from "../../api/config";
+import { https } from "../../api/config";
+import { message } from "antd";
+import { userLocalStorage } from "../../api/localService";
+import { useSelector } from "react-redux";
 
 export default function TicketRoom() {
+  let { info } = useSelector((state) => {
+    return state.userReducer;
+  });
   let params = useParams();
   const [danhSachPhongVe, setDanhSachPhongVe] = useState({});
   const [danhSachPhongVeDaCapNhat, setDanhSachPhongVeDaCapNhat] =
@@ -129,30 +131,30 @@ export default function TicketRoom() {
     });
   };
 
-  function handleDatVe() {
-    // const { info } = useSelector((state) => {
-    //   return state.userReducer;
-    // });
-
-    // axios
-    //   .post(`${BASE_URL}/QuanLyDatVe/DatVe`, danhSachDatVe, {
-    //     headers: {
-    //       ...configHeaders(),
-    //       ...configHeadersAuthorization(info),
-    //     },
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    console.log(danhSachDatVe);
-  }
+  let handleDatVe = () => {
+    if (info) {
+      https
+        .post("/QuanLyDatVe/DatVe", danhSachDatVe)
+        .then((res) => {
+          console.log(res);
+          message.success("Đặt vé thành công");
+          // window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+          message.error("Đã có lỗi xảy ra");
+          // window.location.reload();
+        });
+      console.log(danhSachDatVe);
+      console.log(userLocalStorage.get()?.accessToken);
+    } else {
+      message.error("Vui lòng đăng nhập");
+    }
+  };
 
   if (danhSachPhongVeDaCapNhat) {
     return (
-      <div className="bg-white">
+      <div className="bg-white" id="TicketRoom">
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-1/2 py-5">
