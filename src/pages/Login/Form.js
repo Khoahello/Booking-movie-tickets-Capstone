@@ -85,8 +85,8 @@ const FormLogin = () => {
 
           <Form.Item>
             <Button
-              type="primary"
-              className="bg-orange-600 w-full text-lg mb-3 hover:bg-orange-400"
+              type="secondary"
+              className="bg-orange-500 w-full text-lg mb-3 hover:bg-orange-600 text-black"
               htmlType="submit"
             >
               Login

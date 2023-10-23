@@ -7,7 +7,7 @@ import { DownOutlined } from "@ant-design/icons";
 
 const items = [
   {
-    label: <NavLink to={"/profile"}>Profile</NavLink>,
+    label: <NavLink to={"/profile"}>Thông tin cá nhân</NavLink>,
     key: "0",
   },
   {

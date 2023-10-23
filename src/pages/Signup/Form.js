@@ -98,7 +98,7 @@ const FormSignup = () => {
 
           <h1 className=" mb-2 text-lg text-white">Phone number</h1>
           <Form.Item
-            name="so Dt"
+            name="soDt"
             rules={[
               {
                 required: true,
@@ -138,7 +138,7 @@ const FormSignup = () => {
           <Form.Item>
             <Button
               type="primary"
-              className="bg-orange-600 w-full text-lg mb-3 hover:bg-orange-400"
+              className="bg-orange-500 w-full text-lg mb-3 hover:bg-orange-600 text-black"
               htmlType="submit"
             >
               Signup
@@ -147,10 +147,7 @@ const FormSignup = () => {
         </Form>
         <p className=" m-2 text-lg text-center">
           Already have an account?{" "}
-          <NavLink
-            to={"/login"}
-            className=" text-orange-500 hover:text-orange-400"
-          >
+          <NavLink to={"/login"} className=" text-orange-600">
             Login
           </NavLink>
         </p>
