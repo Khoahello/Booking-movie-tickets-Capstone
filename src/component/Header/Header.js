@@ -11,7 +11,7 @@ const items = [
     key: "0",
   },
   {
-    label: <a href="https://www.aliyun.com">2nd menu item</a>,
+    label: <NavLink to={"/history"}>Lịch sử đặt vé</NavLink>,
     key: "1",
   },
 ];

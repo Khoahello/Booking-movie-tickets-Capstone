@@ -46,7 +46,7 @@ export default function Profile() {
   if (thongTinNguoiDungDaCapNhat) {
     return (
       <div className="container">
-        <h1 className=" text-lg m-2">Thông tin cá nhân</h1>
+        <h1 className=" text-xl font-semibold m-2">Thông tin cá nhân</h1>
         <div>
           <Form
             className="flex flex-wrap w-full md:flex-row"

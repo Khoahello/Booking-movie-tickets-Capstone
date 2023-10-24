@@ -7,6 +7,7 @@ import Layout from "./template/Layout";
 import Signup from "./pages/Signup/Signup";
 import TicketRoom from "./pages/TicketRoom/TicketRoom";
 import Profile from "./pages/Profile/Profile";
+import HistoryBooking from "./pages/HistoryBooking/HistoryBooking";
 
 function App() {
   return (
@@ -43,6 +44,14 @@ function App() {
           element={
             <Layout>
               <Profile />
+            </Layout>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <Layout>
+              <HistoryBooking />
             </Layout>
           }
         />
