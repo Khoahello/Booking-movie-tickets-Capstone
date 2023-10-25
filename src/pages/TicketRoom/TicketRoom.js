@@ -9,9 +9,8 @@ import { userLocalStorage } from "../../api/localService";
 import { useSelector } from "react-redux";
 
 export default function TicketRoom() {
-  let { info } = useSelector((state) => {
-    return state.userReducer;
-  });
+  let { info } = useSelector((state) => state.userSlice);
+
   let params = useParams();
   const [danhSachPhongVe, setDanhSachPhongVe] = useState({});
   const [danhSachPhongVeDaCapNhat, setDanhSachPhongVeDaCapNhat] =

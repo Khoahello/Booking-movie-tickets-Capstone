@@ -18,9 +18,7 @@ const items = [
 
 export default function Header() {
   // anfn
-  let { info } = useSelector((state) => {
-    return state.userReducer;
-  });
+  let { info } = useSelector((state) => state.userSlice);
   let handleLogOut = () => {
     userLocalStorage.remove();
     // reload trang

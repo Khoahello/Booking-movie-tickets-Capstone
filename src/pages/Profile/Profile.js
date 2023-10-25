@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button, Form, Input, message } from "antd";
 import { https } from "../../api/config";
 import { userLocalStorage } from "../../api/localService";
+import { setInfo } from "../../redux/userSlice/userSlice";
+import { useDispatch } from "react-redux";
 
 export default function Profile() {
+  let dispatch = useDispatch();
   let [thongTinNguoiDung, setThongTinNguoiDung] = useState();
   let [thongTinNguoiDungDaCapNhat, setThongTinNguoiDungDaCapNhat] =
     useState(false);
@@ -31,8 +34,7 @@ export default function Profile() {
         console.log(res);
         message.success("Cập nhật thành công");
         userLocalStorage.remove();
-        window.location.href = "/login";
-        message.info("Vui lòng đăng nhập lại");
+        dispatch(setInfo(res.data.content));
       })
       .catch((err) => {
         message.success("Đã có lỗi xảy ra");

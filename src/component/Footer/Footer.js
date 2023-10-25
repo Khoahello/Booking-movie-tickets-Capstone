@@ -28,9 +28,9 @@ export default function Footer() {
       <Desktop>
         <FooterDesktop />
       </Desktop>
-      <Mobile>
+      <Tablet>
         <FooterMobile />
-      </Mobile>
+      </Tablet>
     </div>
   );
 }

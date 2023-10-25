@@ -4,9 +4,9 @@ import { Button, Checkbox, Form, Input, message } from "antd";
 import axios from "axios";
 import { BASE_URL, configHeaders } from "../../api/config";
 import { useDispatch } from "react-redux";
-import { SET_INFO } from "../../redux/constant/user";
 import { NavLink, useNavigate } from "react-router-dom";
 import { userLocalStorage } from "../../api/localService";
+import { setInfo } from "../../redux/userSlice/userSlice";
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
@@ -21,12 +21,16 @@ const FormLogin = () => {
       })
       .then((res) => {
         // đẩy res lên redux sau khi login xong
-        let action = {
-          type: SET_INFO,
-          payload: res.data.content,
-        };
-        console.log();
-        dispatch(action);
+
+        // let action = {
+        //   type: SET_INFO,
+        //   payload: res.data.content,
+        // };
+        // console.log();
+        // dispatch(action);
+
+        dispatch(setInfo(res.data.content));
+
         // đẩy data xuống localStorage
         // let dataJson = JSON.stringify(res.data.content)
         // localStorage.setItem("USER", dataJson)
