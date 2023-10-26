@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import Header from "../../component/Header/Header";
+import React from "react";
 import ListMovie from "./ListMovie.js/ListMovie";
 import TabMovie from "./TabMovie/TabMovie";
-import Footer from "../../component/Footer/Footer";
 import Slider from "./Slider/Slider";
 
 export default function Home() {
@@ -12,7 +9,6 @@ export default function Home() {
       <Slider />
       <ListMovie></ListMovie>
       <TabMovie />
-      <Footer />
     </div>
   );
 }

@@ -44,13 +44,13 @@ export default function Slider() {
         },
       }}
     >
-      <Carousel autoplay effect="fade" afterChange={onChange}>
+      <Carousel autoplay effect="fade" afterChange={onChange} className="h-1/2">
         {banner.map((item, index) => {
           return (
             <img
               src={item.hinhAnh}
               index={index}
-              className="h-auto sm:h-64 lg:h-96 xl:h-200 w-full object-cover"
+              className="w-full object-cover"
               alt=""
             />
           );

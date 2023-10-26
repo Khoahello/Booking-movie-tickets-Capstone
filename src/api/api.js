@@ -3,7 +3,7 @@ import { BASE_URL, configHeaders } from "./config";
 
 export let getListMovie = () => {
   return axios({
-    url: `${BASE_URL}/QuanLyPhim/LayDanhSachPhim`,
+    url: `${BASE_URL}/QuanLyPhim/LayDanhSachPhim?maNhom=GP09`,
     method: "GET",
     headers: configHeaders(),
   });

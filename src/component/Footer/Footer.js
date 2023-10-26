@@ -1,36 +1,28 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
-import FooterDesktop from "./FooterDesktop";
-import FooterMobile from "./FooterMobile";
 
-// start
-const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 });
-  return isDesktop ? children : null;
-};
-const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
-  return isTablet ? children : null;
-};
-const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-  return isMobile ? children : null;
-};
-const Default = ({ children }) => {
-  const isNotMobile = useMediaQuery({ minWidth: 768 });
-  return isNotMobile ? children : null;
-};
-
-// end
 export default function Footer() {
   return (
-    <div>
-      <Desktop>
-        <FooterDesktop />
-      </Desktop>
-      <Tablet>
-        <FooterMobile />
-      </Tablet>
+    <div className="bg-gray-800 w-full pt-5 text-white text-xs">
+      <div className="container">
+        <div className="flex flex-row justify-around">
+          <div>
+            <p className="mb-3">Tix</p>
+            <div className="grid grid-cols-2 gap-2 text-gray-400">
+              <div>
+                <p className="hover:text-gray-100">FAQ</p>
+                <p className="hover:text-gray-100">Brand Guidelines</p>
+              </div>
+              <div>
+                <p className="hover:text-gray-100">Thỏa thuận sử dụng</p>
+                <p className="hover:text-gray-100">Chính sách bảo mật</p>
+              </div>
+            </div>
+          </div>
+          <div>1</div>
+          <div>1</div>
+          <div>1</div>
+        </div>
+      </div>
     </div>
   );
 }
