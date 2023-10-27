@@ -24,19 +24,19 @@ export default function DetailMovie() {
   console.log("danhGia", detail.danhGia);
   return (
     <div>
-      <div className="bg-black p-5 w-full h-screen">
-        <div className="container flex items-center py-20">
-          <div className="w-1/4 p-1">
+      <div className="bg-black p-5 w-full h-auto">
+        <div className="container md:flex items-center py-20">
+          <div className="md:w-1/4 p-1 flex justify-center items-center">
             <img className="h-80 rounded" src={detail.hinhAnh} alt="" />
           </div>
-          <div className="w-1/2 p-1 flex flex-col text-white leading-10">
+          <div className="md:w-1/2 md:text-left text-center p-1 flex flex-col text-white leading-10">
             <p className="text-base font-medium">
               {moment(detail.ngayKhoiChieu).format("DD/MM/YYYY")}
             </p>
             <p className="text-2xl font-medium">{detail.tenPhim}</p>
             <p className="text-sm font-medium">120 phút</p>
           </div>
-          <div className="w-1/4 p-1 flex flex-col items-center">
+          <div className="md:w-1/4 p-1 flex flex-col items-center">
             <Progress
               className="py-4"
               size={150}

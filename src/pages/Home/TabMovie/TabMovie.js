@@ -32,7 +32,7 @@ export default function TabMovie() {
             style={{ border: "1px solid gray" }}
           />
           <div>
-            <p>{phim.tenPhim}</p>
+            <p className="text-lg font-semibold">{phim.tenPhim}</p>
             <div className="flex flex-wrap">
               {phim.lstLichChieuTheoPhim.map((lichChieu) => {
                 // console.log(lichChieu.ngayChieuGioChieu);
@@ -106,7 +106,7 @@ export default function TabMovie() {
     });
   };
   return (
-    <div className="container shadow p-3 rounded border-2 border-l-black">
+    <div className="container shadow p-3 rounded border-2 border-l-black hidden lg:block">
       <Tabs
         style={{
           height: 500,

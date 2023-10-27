@@ -155,8 +155,8 @@ export default function TicketRoom() {
     return (
       <div className="bg-white" id="TicketRoom">
         <div className="container">
-          <div className="flex flex-wrap">
-            <div className="w-1/2 py-5">
+          <div className="lg:flex items-center">
+            <div className="lg:w-1/2 py-5">
               {/* <div className="screen"></div> */}
               <div className="grid grid-cols-16 gap-1">{renderListChair()}</div>
               <div className="flex justify-evenly m-3">
@@ -176,7 +176,7 @@ export default function TicketRoom() {
                 </div>
               </div>
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2">
               <div class="container mx-auto px-4 py-5">
                 <div class="bg-white rounded-lg shadow-xl p-6">
                   <h1 class="text-2xl font-bold mb-4 text-center">
