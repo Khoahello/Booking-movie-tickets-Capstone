@@ -9,6 +9,7 @@ import TicketRoom from "./pages/TicketRoom/TicketRoom";
 import Profile from "./pages/Profile/Profile";
 import HistoryBooking from "./pages/HistoryBooking/HistoryBooking";
 import Spinner from "./component/Spinner/Spinner";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
             }
           />
           <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

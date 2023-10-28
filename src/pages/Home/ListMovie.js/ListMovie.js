@@ -41,6 +41,43 @@ export default function ListMovie() {
           </Card>
         );
       })}
+
+      {/* 
+      {movieArr.map((item, index) => {
+        getInfoMovieByTheater(item.maPhim)
+          .then((res) => {
+            if (res.data.content.heThongRapChieu.length === 0) {
+              // Bỏ qua return Card cho item này
+              return;
+            }
+            // Xử lý item tiếp theo
+            return (
+              <Card
+                hoverable
+                // style={{ width: 240 }}
+                cover={
+                  <img
+                    className="h-48 object-cover"
+                    alt="example"
+                    src={item.hinhAnh}
+                  />
+                }
+              >
+                <Meta className="text-lg" title={item.tenPhim} />
+                <p className=" py-1 text-gray-500 truncate">{item.moTa}</p>
+                <NavLink to={`/detail/${item.maPhim}`} className="text-white">
+                  <button className="px-20 py-5 text-white bg-red-500 rounded hover:bg-red-700 font-medium">
+                    Mua vé
+                  </button>
+                </NavLink>
+              </Card>
+            );
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })}
+      */}
     </div>
   );
 }

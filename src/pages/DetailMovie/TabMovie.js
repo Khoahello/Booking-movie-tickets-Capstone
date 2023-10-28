@@ -44,10 +44,6 @@ export default function TabMovie() {
   }, []);
 
   let renderLichChieuPhim = (lichChieuPhim) => {
-    // console.log(
-    //   "🤣 ~ file: TabMovie.js:47 ~ renderLichChieuPhim ~ lichChieuPhim:",
-    //   lichChieuPhim
-    // );
     return lichChieuPhim.map((lichChieuPhim) => {
       return (
         <NavLink to={`/ticketroom/${lichChieuPhim.maLichChieu}`}>
@@ -143,19 +139,33 @@ export default function TabMovie() {
 
   console.log("lịch chiếu phim", danhSachLichChieuPhim);
 
-  return (
-    <div className="">
-      <div className="container shadow p-3 rounded border-2 border-l-black">
-        <Tabs
-          style={{
-            height: 500,
-          }}
-          tabPosition="left"
-          defaultActiveKey="1"
-          items={handleHeThongRap()}
-          onChange={onChange}
-        />
-      </div>
-    </div>
-  );
+  if (danhSachLichChieuPhimDaCapNhat) {
+    if (danhSachLichChieuPhim.heThongRapChieu.length === 0) {
+      return (
+        <div className="flex flex-col text-center h-20">
+          <h1>
+            Hệ thống rạp chiếu của bộ phim này chưa được cập nhật hoặc đã quá
+            hạn chiếu
+          </h1>
+          <h1>Xin lỗi vì sự bất tiện này</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div className="">
+          <div className="container shadow p-3 rounded border-2 border-l-black">
+            <Tabs
+              style={{
+                height: 500,
+              }}
+              tabPosition="left"
+              defaultActiveKey="1"
+              items={handleHeThongRap()}
+              onChange={onChange}
+            />
+          </div>
+        </div>
+      );
+    }
+  }
 }
