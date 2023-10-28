@@ -6,12 +6,9 @@ import moment from "moment";
 import TabMovie from "./TabMovie";
 
 export default function DetailMovie() {
-  // useParams() => lấy id từ thanh địa chỉ
   let params = useParams();
   const [detail, setDetail] = useState({});
-  console.log("🤣 ~ file: DetailMovie.js:6 ~ DetailMovie ~ params:", params);
   useEffect(() => {
-    // gọi api lấy chi tiết phim dựa vào id
     getDetailMovie(params.id)
       .then((res) => {
         console.log(res);
@@ -21,7 +18,6 @@ export default function DetailMovie() {
         console.log(err);
       });
   }, []);
-  console.log("danhGia", detail.danhGia);
   return (
     <div>
       <div className="bg-black p-5 w-full h-auto">
@@ -58,5 +54,3 @@ export default function DetailMovie() {
     </div>
   );
 }
-
-// progress antd

@@ -16,10 +16,6 @@ export default function Slider() {
   let fetchData = async () => {
     try {
       let response = await getDataSlider();
-      console.log(
-        "🤣 ~ file: Slider.js:20 ~ fetchData ~ response:",
-        response.data.content
-      );
       setBanner(response.data.content);
     } catch {
       message.error("Đã có lỗi xảy ra");
@@ -28,10 +24,7 @@ export default function Slider() {
   useEffect(() => {
     fetchData();
   }, []);
-  // try catch
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+  const onChange = (currentSlide) => {};
   return (
     <ConfigProvider
       theme={{

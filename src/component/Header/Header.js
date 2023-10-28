@@ -2,19 +2,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { userLocalStorage } from "../../api/localService";
 import { NavLink } from "react-router-dom";
-import { Button, Drawer, Dropdown, Space } from "antd";
-import { DownOutlined, MenuOutlined, UserOutlined } from "@ant-design/icons";
-
-const items = [
-  {
-    label: <NavLink to={"/profile"}>Thông tin cá nhân</NavLink>,
-    key: "0",
-  },
-  {
-    label: <NavLink to={"/history"}>Lịch sử đặt vé</NavLink>,
-    key: "1",
-  },
-];
+import { Drawer, message } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -25,14 +14,10 @@ export default function Header() {
   const onClose = () => {
     setOpen(false);
   };
-  // anfn
   let { info } = useSelector((state) => state.userSlice);
   let handleLogOut = () => {
     userLocalStorage.remove();
-    // reload trang
     window.location.reload();
-    // chuyển hướng về trang home
-    // window.location.href = "/"
   };
   let handleLogIn = () => {
     window.location.href = "/login";
@@ -41,10 +26,15 @@ export default function Header() {
     window.location.href = "/register";
   };
 
+  let handleKiemTraDaLogin = () => {
+    if (!info) {
+      message.error("Vui lòng đăng nhập");
+    }
+  };
+
   let renderUserNav = () => {
     let classBtn = "border-2 border-black rounded-xl px-7 py-3";
     if (info) {
-      // đã đăng nhập
       return (
         <>
           <div
@@ -54,9 +44,6 @@ export default function Header() {
             <i class="las la-sign-out-alt text-2xl px-1"></i>
             <div className="text-base">Đăng xuất</div>
           </div>
-          {/* <button className={classBtn} onClick={handleLogOut}>
-            Đăng xuất
-          </button> */}
         </>
       );
     } else {
@@ -103,10 +90,22 @@ export default function Header() {
         width={"200"}
       >
         <div className="flex flex-col space-y-2">
-          <NavLink className="hover:text-orange-500" to={"/profile"}>
+          <NavLink
+            onClick={() => {
+              handleKiemTraDaLogin();
+            }}
+            className="hover:text-orange-500"
+            to={"/profile"}
+          >
             Thông tin cá nhân
           </NavLink>
-          <NavLink className="hover:text-orange-500" to={"/history"}>
+          <NavLink
+            onClick={() => {
+              handleKiemTraDaLogin();
+            }}
+            className="hover:text-orange-500"
+            to={"/history"}
+          >
             Lịch sử đặt vé
           </NavLink>
         </div>

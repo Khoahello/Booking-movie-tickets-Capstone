@@ -8,24 +8,6 @@ const onChange = (key) => {
   console.log(key);
 };
 
-// const items = [
-//   {
-//     key: '1',
-//     label: 'Tab 1',
-//     children: 'Content of Tab Pane 1',
-//   },
-//   {
-//     key: '2',
-//     label: 'Tab 2',
-//     children: 'Content of Tab Pane 2',
-//   },
-//   {
-//     key: '3',
-//     label: 'Tab 3',
-//     children: 'Content of Tab Pane 3',
-//   },
-// ];
-
 export default function TabMovie() {
   const params = useParams();
   const [danhSachLichChieuPhim, setDanhSachLichChieuPhim] = useState({});
@@ -80,7 +62,6 @@ export default function TabMovie() {
   };
 
   let handleThuNgay = (cumRapChieu) => {
-    // const thuNgay = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"]
     const getthuNgay = [
       { thu: ["Thứ 2"], ngay: [15] },
       { thu: ["Thứ 3"], ngay: [16] },
@@ -103,7 +84,6 @@ export default function TabMovie() {
           <div
             style={{
               height: 500,
-              // overflow: "scroll",
             }}
           >
             {renderCumRapChieu(cumRapChieu)}

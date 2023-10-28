@@ -1,6 +1,6 @@
 import React from "react";
 import "./StyleSignup.scss";
-import { Button, Checkbox, Form, Input, message } from "antd";
+import { Button, Form, Input, message } from "antd";
 import axios from "axios";
 import { BASE_URL, configHeaders } from "../../api/config";
 import { useDispatch } from "react-redux";
@@ -20,15 +20,9 @@ const FormSignup = () => {
         headers: configHeaders(),
       })
       .then((res) => {
-        // đẩy res lên redux sau khi login xong
         dispatch(setInfo(res.data.content));
-        // đẩy data xuống localStorage
-        // let dataJson = JSON.stringify(res.data.content)
-        // localStorage.setItem("USER", dataJson)
         userLocalStorage.set(res.data.content);
-        // useNavigate
         message.success("Đăng ký thành công");
-        // chuyển hướng về trang home
         navigate("/home");
         console.log(res);
       })

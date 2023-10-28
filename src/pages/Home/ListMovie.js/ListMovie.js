@@ -22,7 +22,6 @@ export default function ListMovie() {
         return (
           <Card
             hoverable
-            // style={{ width: 240 }}
             cover={
               <img
                 className="h-48 object-cover"

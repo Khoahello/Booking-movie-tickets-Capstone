@@ -5,7 +5,6 @@ import { getChair } from "../../api/api";
 import moment from "moment";
 import { https } from "../../api/config";
 import { message } from "antd";
-import { userLocalStorage } from "../../api/localService";
 import { useSelector } from "react-redux";
 
 export default function TicketRoom() {
@@ -32,13 +31,6 @@ export default function TicketRoom() {
         console.log(err);
       });
   }, []);
-
-  if (danhSachPhongVeDaCapNhat) {
-    console.log("danh sách phòng vé", danhSachPhongVe);
-  } else {
-    console.log("chưa cập nhật");
-  }
-  console.log(danhSachPhongVe);
 
   let handleClickChair = (tenGhe, loaiGhe, giaVe, maGhe) => {
     let element = document.getElementsByClassName(`${tenGhe}`);
@@ -137,15 +129,11 @@ export default function TicketRoom() {
         .then((res) => {
           console.log(res);
           message.success("Đặt vé thành công");
-          // window.location.reload();
         })
         .catch((err) => {
           console.log(err);
           message.error("Đã có lỗi xảy ra");
-          // window.location.reload();
         });
-      console.log(danhSachDatVe);
-      console.log(userLocalStorage.get()?.accessToken);
     } else {
       message.error("Vui lòng đăng nhập");
     }
@@ -157,7 +145,6 @@ export default function TicketRoom() {
         <div className="container">
           <div className="lg:flex items-center">
             <div className="lg:w-1/2 py-5">
-              {/* <div className="screen"></div> */}
               <div className="grid grid-cols-16 gap-1">{renderListChair()}</div>
               <div className="flex justify-evenly m-3">
                 <div className="">
@@ -236,8 +223,6 @@ export default function TicketRoom() {
                   </div>
                 </div>
               </div>
-
-              {/*  */}
             </div>
           </div>
         </div>

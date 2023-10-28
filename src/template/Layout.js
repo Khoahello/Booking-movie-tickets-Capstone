@@ -11,5 +11,3 @@ export default function Layout({ children }) {
     </div>
   );
 }
-
-// props children

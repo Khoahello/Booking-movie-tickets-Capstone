@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getMovieByTheater } from "../../../api/api";
 import { Tabs } from "antd";
 import moment from "moment/moment";
-import { hover } from "@testing-library/user-event/dist/hover";
 import { NavLink } from "react-router-dom";
 
-const onChange = (key) => {
-  console.log(key);
-};
+const onChange = (key) => {};
 
 export default function TabMovie() {
   const [danhSachHeThongRap, setDanhSachHeThongRap] = useState([]);
